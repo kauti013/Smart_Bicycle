@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ android:background="@drawable/roads17"
+    android:weightSum="1"
+    android:orientation="vertical"
+   >
+
+    <TextView
+        android:layout_width="262dp"
+        android:layout_height="121dp"
+        android:id="@+id/textView"
+        android:layout_weight="0.07" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11" />
+
+    <TextView
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:text="                                              -A Final Year Project"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.36"
+        android:textStyle="italic" />
+
+    <requestFocus
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.11" />
+
+    <WebView
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/splashFrame"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_weight="0.34" />
+
+
+</LinearLayout>

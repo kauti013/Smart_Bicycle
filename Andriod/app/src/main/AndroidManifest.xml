@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skobbler.sdkdemo"
+    android:versionCode="3"
+    android:versionName="2.5.1">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".application.DemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light"
+        >
+
+        <meta-data
+            android:name="com.skobbler.ngx.API_KEY"
+            android:value="PUT_API_KEY"/>
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/SplashActivityTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.MapActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.ReverseGeocodingActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.NearbySearchActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".activity.NearbySearchResultsActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.CategorySearchResultsActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.OfflineAddressSearchActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.TracksActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.TrackElementsActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.POICategoriesListActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.ResourceDownloadsListActivity"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".activity.MapCacheActivity" android:configChanges="orientation"  >
+        </activity>
+        <receiver android:name="com.skobbler.ngx.sdktools.navigationui.autonight.SKToolsCalculateSunriseSunsetTimeAutoReceiver" />
+        <receiver android:name="com.skobbler.ngx.sdktools.navigationui.autonight.SKToolsChangeMapStyleAutoReceiver" />
+        <meta-data android:name="provideMultipleMapSupport" android:value="false" />
+
+        <!--manifest config for the debug kit-->
+        <meta-data
+            android:name="enableDebugKit"
+            android:value="false" />
+        <activity
+            android:name="com.skobbler.debugkit.activity.DebugMapActivity"
+            android:configChanges="orientation|screenSize"></activity>
+
+
+
+
+
+
+
+        <activity
+            android:name="com.skobbler.sdkdemo.smartbicycle.SplashScreen"
+            android:label="@string/title_activity_sms_sending"
+            android:theme="@style/SplashActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.skobbler.sdkdemo.smartbicycle.SendSmsActivity"
+            android:label="@string/send_sms"
+            >
+        </activity>
+        <receiver android:name="com.skobbler.sdkdemo.smartbicycle.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+
+        </receiver>
+        <activity
+            android:name="com.skobbler.sdkdemo.smartbicycle.mapss"
+            android:label="@string/send_sms2"
+            android:parentActivityName="com.skobbler.sdkdemo.smartbicycle.SendSmsActivity"
+            android:theme="@style/Theme.Transparent">
+        </activity>
+
+        <activity
+            android:name="com.skobbler.sdkdemo.smartbicycle.lights"
+            android:label="@string/automatic_lights"
+            >
+        </activity>
+
+        <activity
+            android:name="com.skobbler.sdkdemo.smartbicycle.MainActivity1"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+
+
+
+        <activity
+            android:name="com.skobbler.sdkdemo.bluetooth.MainActivity"
+            android:label="@string/Bluetooth_main"
+            >
+        </activity>
+        <activity
+            android:name="com.skobbler.sdkdemo.bluetooth.DeviceListActivity"
+            android:label="@string/Device_list"
+            android:parentActivityName="com.skobbler.sdkdemo.bluetooth.MainActivity">
+        </activity>
+
+
+
+
+
+    </application>
+
+</manifest>
